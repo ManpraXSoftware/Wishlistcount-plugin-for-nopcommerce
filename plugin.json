@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Wishlist",
+  "SystemName": "Widgets.Wishlist",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "manpraX team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.Wishlist.dll",
+  "Description": "This plugin enables to count the wishlisted items and show in product details page"
+}

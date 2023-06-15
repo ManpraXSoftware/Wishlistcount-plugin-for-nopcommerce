@@ -1,0 +1,38 @@
+﻿/*style for red heart in product details*/
+
+@font-face {
+  font-family: 'entypo';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/entypo.woff') format('woff');
+}
+
+.entypo-heart:before {
+  content: "\2665";
+}
+
+
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  color: #DC143C;
+}
+
+/*style for fade button in catalog page*/
+
+.button {
+  font-family: "Times New Roman", Times, serif;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: left;
+  font-size: 14px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+

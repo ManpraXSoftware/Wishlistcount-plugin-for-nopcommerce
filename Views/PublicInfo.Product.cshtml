@@ -1,0 +1,28 @@
+﻿@model WishlistModel
+
+<link rel="stylesheet" href="~/Plugins/Widgets.Wishlist/Content/styles.css" />
+
+<div id="divData">   
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+
+<script type="text/javascript">
+     $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "@Html.Raw(Url.Action("WishlistInProductDetails", "WishlistPublic", new {productId = Model.ProductId}))",
+            data: $('#product-details-form').serialize(),
+            dataType: "text",
+            success: function (result, status, xhr) {  
+                if (result != null && result != "0") {
+                    $("#divData").html(result).addClass("entypo-heart"); //added style class of red heart
+                }
+                
+            },
+            error: function (xhr, status, error) {
+                $("#divData").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+            }
+        });
+    });
+</script>

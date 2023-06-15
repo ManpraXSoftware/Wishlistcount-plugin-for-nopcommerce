@@ -1,0 +1,54 @@
+﻿@model Nop.Plugin.Widgets.Wishlist.Models.ConfigurationModel
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync(typeof(StoreScopeConfigurationViewComponent))
+
+<form asp-controller="Wishlist" asp-action="Configure" method="post">   
+    <div class="cards-group">
+        <div class="card card-default">           
+            <div class="card-body">
+                <div class="card-group">
+                    <p>@T("Plugins.Widgets.Wishlist.Instructions")</p>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="DaysId_OverrideForStore" asp-input="DaysId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="DaysValues" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-select asp-for="DaysId" asp-items="Model.DaysValues" />
+                        <span asp-validation-for="DaysId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="Text_OverrideForStore" asp-input="Text" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="Text" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="Text" />
+                        <span asp-validation-for="Text"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="EnableInCategory_OverrideForStore" asp-input="EnableInCategory" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="EnableInCategory" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="EnableInCategory" />
+                        <span asp-validation-for="EnableInCategory"></span>
+                    </div>
+                </div>
+                 
+                <div class="form-group row">
+                    <div class="col-md-9 offset-md-3">
+                        <button type="submit" name="save" class="btn btn-primary">@T("Admin.Common.Save")</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
